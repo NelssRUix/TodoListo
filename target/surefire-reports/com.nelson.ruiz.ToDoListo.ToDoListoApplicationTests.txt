@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nelson.ruiz.ToDoListo.ToDoListoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.53 s -- in com.nelson.ruiz.ToDoListo.ToDoListoApplicationTests
