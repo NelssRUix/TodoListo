@@ -13,12 +13,12 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/task")
+@RequestMapping("api/v1/tasks")
 public class GetByUuidController {
 
     private final ITaskService taskService;
 
-    @GetMapping("/getByUuid/{uuid}")
+    @GetMapping("/{uuid}")
     public ResponseEntity<Optional<TaskDTO>> getByUuid(@PathVariable UUID uuid , @RequestParam StatusEntity statusEntity){
 
         if (statusEntity != null) {

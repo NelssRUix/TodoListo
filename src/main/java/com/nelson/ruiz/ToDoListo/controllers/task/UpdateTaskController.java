@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/task")
+@RequestMapping("api/v1/tasks")
 public class UpdateTaskController {
 
     private final ITaskService taskService;
