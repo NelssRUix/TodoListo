@@ -14,7 +14,7 @@ public class CorsConfig  implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "PUT","DELETE") // Métodos específicos
                 .allowedHeaders("Content-Type") // Encabezados específicos
                 .exposedHeaders("Content-Disposition") // Exponer encabezados
-                .allowCredentials(true)
+               // .allowCredentials(true)
                 .maxAge(3600); // Cache de CORS por 1 hora
     }
 
