@@ -64,9 +64,60 @@ Este proyecto también está preparado para su despliegue en producción utiliza
 
 El archivo **Dockerfile** incluido contiene lo fundamental y básico para construir la imagen de la aplicación, optimizando el despliegue en producción.
 
+__________________________________________________________________________________________________________________________________________________________________________________________
 **Pasos para el Despliegue:**
 
-Para el despliegue en producción, utilizamos Docker para empaquetar la aplicación en un contenedor que incluye todas las dependencias necesarias. El archivo Dockerfile contiene las configuraciones básicas y esenciales para realizar este empaquetado y garantizar que la aplicación se ejecute de manera consistente en cualquier entorno.
+1. Generar el Snapshot
+Antes de desplegar en Render, es necesario crear un snapshot del proyecto utilizando el siguiente comando Maven para generar el archivo JAR:
 
-**Antes de desplegar en Render** es necesario crear un snapshot del proyecto utilizando mvn package para generar el archivo JAR que se incluirá en la imagen Docker. Render se encarga de manejar el despliegue de esta imagen Docker, permitiendo una integración continua y simplificada para entornos de producción.
+                                                         mvn clean package
+
+2. Crear la Imagen Docker
+Con el archivo JAR generado, Docker se encarga de crear la imagen.
+
+
+3. Subir la Imagen a Render
+Render se encarga de manejar el despliegue de esta imagen Docker en un entorno de producción. Solo necesitas configurar el servicio en Render para que extraiga y ejecute la imagen. Render proporciona una integración continua que permite que los despliegues sean automáticos después de cada nueva imagen.
+
+
+5. Despliegue Automático en Render
+Render supervisa los cambios y despliega la última versión de la imagen Docker cuando se realiza una actualización, asegurando que la aplicación esté siempre actualizada en producción sin necesidad de intervención manual adicional.
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+ **RECURSOS**
+
+ **Este proyecto utiliza las siguientes herramientas y tecnologías:**
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+
+**Spring Initializr:** Generador inicial de proyectos Spring Boot, que permite configurar rápidamente un proyecto con las dependencias necesarias. 
+https://start.spring.io/
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+**ModelMapper:** Biblioteca para mapear automáticamente objetos en aplicaciones Java, simplificando la conversión entre entidades y DTOs. 
+https://modelmapper.org/getting-started/
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+**Maven:** Herramienta de gestión y construcción de proyectos utilizada para gestionar las dependencias y generar el archivo JAR de la aplicación.
+https://maven.apache.org/download.cgi
+
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+**Render:** Plataforma de despliegue en la nube que facilita la implementación de aplicaciones Dockerizadas. 
+
+
+https://dashboard.render.com/login
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
 
