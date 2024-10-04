@@ -57,3 +57,16 @@ ________________________________________________________________________________
 
 ![image](https://github.com/user-attachments/assets/63920ecf-125c-4313-bac0-6c0dd666b863)
 
+
+**Docker y Despliegue en Render**
+
+Este proyecto también está preparado para su despliegue en producción utilizando **Docker** y **Render**. Docker se utiliza para crear contenedores que encapsulan la aplicación junto con todas sus dependencias, lo que garantiza que se ejecute de manera consistente en cualquier entorno.
+
+El archivo **Dockerfile** incluido contiene lo fundamental y básico para construir la imagen de la aplicación, optimizando el despliegue en producción.
+
+**Pasos para el Despliegue:**
+
+Para el despliegue en producción, utilizamos Docker para empaquetar la aplicación en un contenedor que incluye todas las dependencias necesarias. El archivo Dockerfile contiene las configuraciones básicas y esenciales para realizar este empaquetado y garantizar que la aplicación se ejecute de manera consistente en cualquier entorno.
+
+**Antes de desplegar en Render** es necesario crear un snapshot del proyecto utilizando mvn package para generar el archivo JAR que se incluirá en la imagen Docker. Render se encarga de manejar el despliegue de esta imagen Docker, permitiendo una integración continua y simplificada para entornos de producción.
+
