@@ -73,11 +73,11 @@ public class TaskServiceImpl implements ITaskService {
 
         if (optionalTask.isPresent()) {
 
-           Task task = optionalTask.get();
+            Task task = optionalTask.get();
 
-           task.setStatusEntity(StatusEntity.DELETE);
+            task.setStatusEntity(StatusEntity.DELETE);
 
-           taskDAO.save(task);
+            taskDAO.save(task);
 
         } else {
 
@@ -85,6 +85,27 @@ public class TaskServiceImpl implements ITaskService {
         }
 
 
+    }
+
+    @Override
+    public Optional<TaskDTO> reactivateTask(UUID uuid) {
+        Optional<Task> optionalTask = taskDAO.findByUuidAndStatusEntity(uuid, StatusEntity.DELETE);
+
+
+        if (optionalTask.isPresent()) {
+
+            Task task = optionalTask.get();
+            task.setStatusEntity(StatusEntity.ACTIVE);
+            Task updatedTask = taskDAO.save(task);
+            TaskDTO taskDTO = taskMapper.taskDTO(updatedTask);
+
+            return Optional.of(taskDTO);
+
+        } else {
+
+            throw new EntityNotFoundException("Task not found");
+
+        }
     }
 
     @Override

@@ -18,6 +18,8 @@ public interface ITaskService {
 
     void deleteTask(UUID uuid, StatusEntity statusEntity);
 
+    Optional<TaskDTO> reactivateTask(UUID uuid);
+
     Page<TaskDTO> findAllByStatusEntity(Pageable pageable, StatusEntity statusEntity);
 
     Optional<TaskDTO> findByUuid(UUID uuid, StatusEntity  statusEntity);
